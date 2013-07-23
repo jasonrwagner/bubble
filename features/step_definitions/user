@@ -1,0 +1,4 @@
+Given /I have entered (.*) as a user/ do |u|
+  user = User.new
+  user.push(n.to_s)
+end

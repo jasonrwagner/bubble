@@ -7,7 +7,6 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3', :group => [:development, :test]
-#gem 'pg'
 gem 'tilt'
 gem 'execjs'
 gem 'heroku'
@@ -16,19 +15,18 @@ gem 'taps'
 gem 'minitest'
 gem 'rb-inotify'
 
-group :development, :test do
+group :test do
 
   gem 'mysql2'
-  gem 'taps', :require => false # has an sqlite dependency, which heroku hates
-#  gem 'pg'
-  #gem 'turn'
+  gem 'taps', :require => false # has an sqlite dependency, which heroku hates'
   gem 'rspec-rails' #, "~> 2.8"
   gem 'capybara'
   gem 'guard-rspec'
   gem 'launchy'
   gem "factory_girl_rails"
   gem 'webrat'
-  gem 'cucumber'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
 end
 
 group :production do
