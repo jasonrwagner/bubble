@@ -1,0 +1,4 @@
+<%= flash[:notice] %>
+<% for project in @projects %>
+  <p><%=h project.name %></p>
+<% end %>
