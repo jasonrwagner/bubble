@@ -12,6 +12,14 @@ class ProjectsController < ApplicationController
   end
 
   def create
+    @project = Project.create(params[:name])
+  end
 
+
+
+  private
+
+  def project_params
+    params.require(:project).permit(:name)
   end
 end
