@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-  	@project = Project.first
+  	@project = Project.find(params[:id])
   end
 
   def new
@@ -12,8 +12,31 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.create(params[:name])
+    @project = Project.new(project_params)
+
+
+      if @project.save
+        flash[:success] = "Made a new tournament"
+        redirect_to "index"
+      else
+        render :new
+      end
   end
+
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    if  @project.update_attributes(params[:name])
+      redirect_to @project
+    else
+      render 'edit'
+    end
+  end
+
+
 
 
 

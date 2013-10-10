@@ -1,4 +1,11 @@
-<%= flash[:notice] %>
-<% for project in @projects %>
-  <p><%=h project.name %></p>
-<% end %>
+<h1>Current Project List</h1>
+
+  <ul>
+    <% @projects.each do |project| %>
+      <li>
+        <%= project.name %>
+      </li>
+    <% end %>
+
+  </ul>
+
