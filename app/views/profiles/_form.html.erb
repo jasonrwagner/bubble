@@ -1,0 +1,17 @@
+<%= form_for (@profile) do |f| %>
+
+  <div><%= f.label :first_name %><br />
+  <%= f.first_name_field :first_name %></div>
+
+  <div><%= f.label :last_name %><br />
+  <%= f.last_name_field :last_name %></div>
+
+  <div><%= f.label :likes %><br />
+  <%= f.likes_field :likes %></div>
+
+  <div><%= f.label :about_me %><br />
+  <%= f.about_me_field :about_me %></div>
+
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>

@@ -1,9 +1,13 @@
 Bubble::Application.routes.draw do
   get "projects/index"
-  devise_for :users
+  devise_for :users do
+    resources :profile
+  end
+
 
   resources :pages
   resources :projects
+  
 
 
   # The priority is based upon order of creation:

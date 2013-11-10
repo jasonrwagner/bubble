@@ -13,8 +13,6 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-
-
       if @project.save
         flash[:success] = "Made a new tournament"
         redirect_to "index"
