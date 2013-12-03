@@ -4,6 +4,7 @@ Given (/^I am on the home page$/) do
 	#click_link "Sign up"
 end
 
+
 When(/^I press "(.*?)"$/) do |sign_up|
   click_link "Sign up"
 end
@@ -29,8 +30,9 @@ end
 #    fill_in("user_#{field}", :with => answer)
 # end
 
-And(/^I press "Sign_up"$/) do
-  click_button('Sign up')
+And(/^I press "(.*?)"$/) do |sign_up|
+  click_button "Sign up"
+  visit pages_path
 end
 
 Then(/^I should be signed in$/) do

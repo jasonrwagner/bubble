@@ -1,4 +1,5 @@
 Bubble::Application.routes.draw do
+  root :to => 'pages#index'
   get "projects/index"
   devise_for :users do
     resources :profile
@@ -59,7 +60,7 @@ Bubble::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'pages#index'
+
 
   # See how all your routes lay out with "rake routes"
 

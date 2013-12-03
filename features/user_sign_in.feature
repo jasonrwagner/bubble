@@ -5,7 +5,7 @@ Feature: Sign up
 
 Scenario: Successful Sign Up
   Given I am on the home page
-  When I click "Sign up"
+  When I press "Sign up"
   Then I am on the users_sign_up_page
   And I fill in email
   And I fill in password
