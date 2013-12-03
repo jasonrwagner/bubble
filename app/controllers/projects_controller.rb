@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
       if @project.save
         flash[:success] = "Made a new tournament"
-        redirect_to "index"
+        redirect_to pages_path
       else
         render :new
       end

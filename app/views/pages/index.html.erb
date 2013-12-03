@@ -3,6 +3,8 @@
 <% if user_signed_in? %>
   <div>Hello <%= current_user.email %> join a project?</div>
   <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <p>Make a new project</p>
+  <%= link_to "new project", new_project_path %>
 <% else %>
 <h1>First Time</h1>
 
