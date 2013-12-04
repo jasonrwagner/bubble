@@ -13,6 +13,8 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.owner = current_user
+    @project.user_email = User.find(current_user.id).email
       if @project.save
         flash[:success] = "Made a new tournament"
         redirect_to pages_path
@@ -41,6 +43,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name)
+    params.require(:project).permit(:name, :owner, :user_email)
   end
 end
