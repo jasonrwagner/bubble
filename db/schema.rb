@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20131203234348) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "owner"
+    t.integer   "owner"
     t.string   "user_email"
   end
 
