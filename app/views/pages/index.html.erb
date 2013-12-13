@@ -20,6 +20,7 @@
     <% @projects.each do |project| %>
       <li>
         <%= project.name %>
+        <%= project.description %>
         <% if current_user && project.owner.to_i == current_user.id %>
           <%= link_to "edit", edit_project_path(project) %>
         <% else %>
