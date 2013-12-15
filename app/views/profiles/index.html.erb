@@ -1,0 +1,10 @@
+<h1>Current Profiles List</h1>
+
+  <ul>
+    <% @users.each do |user| %>
+      <li>
+        <%= user.email %>
+      </li>
+    <% end %>
+
+  </ul>

@@ -1,9 +1,14 @@
-#class ProfilesController < ApplicationController
+class ProfilesController < ApplicationController
+
+  def index
+  	@users = User.all
+  end
+
   
 
-#  def show
-#  	@profile = Profile.find(params[:id])
-#  end
+  def show
+  	@profile = Profile.find(params[:id])
+  end
 
 #  def new
 #  	@profile = Profile.new
@@ -21,9 +26,9 @@
 
 
 
-#  private
+  private
 
-#  def profile_params
-#    params.require(:profile).permit(:first_name, :last_name, :likes, :about_me)
-#  end
-#end
+  def profile_params
+    params.require(:profile).permit(:first_name, :last_name, :likes, :about_me)
+  end
+end

@@ -2,12 +2,13 @@ Bubble::Application.routes.draw do
   root :to => 'pages#index'
   get "projects/index"
   devise_for :users do
-    resources :profile
+    resources :profiles
   end
 
 
   resources :pages
   resources :projects
+  resources :profiles
   
 
 
