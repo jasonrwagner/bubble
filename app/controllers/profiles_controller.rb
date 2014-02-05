@@ -10,6 +10,10 @@ class ProfilesController < ApplicationController
   	@profile = User.find(params[:id])
   end
 
+  def edit
+  	@profile = User.find(params[:id])
+  end
+
 #  def new
 #  	@profile = Profile.new
 #  end

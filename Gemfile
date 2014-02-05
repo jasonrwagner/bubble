@@ -5,6 +5,9 @@ gem 'rails', '4.0'
 gem 'devise', github: 'idl3/devise', branch: 'rails4'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'sass-rails',   '~> 4.0.0'
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
 
 
 

@@ -3,13 +3,33 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #sign_in{
-	float:right;
+	
 	border: solid 1px;
 	font-size: 10px;
 
 }
 
+#user_info  {
+	border:  solid 1px;
+	float:  right;
+	font-size:  12px;
+}
+
+#user_info ul.list-inline  {
+	display:  inline;
+}
+
+#user_info ul.list-inline li {
+    list-style:  none;
+	color:  red;
+	border:  solid 1px;
+
+}
+
+
+
 #home_list  {
 	border:  solid 1px;
 	width:  300px;
+	
 }
