@@ -36,6 +36,7 @@ group :test do
   gem 'webrat'
   gem 'cucumber-rails'
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
 
 group :production do

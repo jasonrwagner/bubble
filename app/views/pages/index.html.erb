@@ -12,19 +12,15 @@
     <li><%= link_to "new project", new_project_path %></li>
     <% else %>
 
-    <h1>First Time</h1>
+    <li>First Time</li>
 
-
-
-
-
-     <%= render "devise/shared/links" %>
+      <%= render "devise/shared/links" %>
 
 
     <% end %>
   </ul>
 </div>
-<aside id="home_list">  
+<div id="home_list">  
   <ul>
     <% @projects.each do |project| %>
       <li>
@@ -39,6 +35,6 @@
     <% end %>
 
   </ul>
-</aside>
+</div>
 
 </html>

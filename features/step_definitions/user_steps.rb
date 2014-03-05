@@ -1,15 +1,27 @@
-Given (/^I am on the home page$/) do 
-	visit pages_path
+#createUser = User.new("Fred", "Jones", "Stuff", "I like food")
+
+
+
+
+
+Given(/^I am on the "(.*?)" page$/) do |page|
+  something = { 'home' => pages_path, 'create_new_user' => new_user_registration_path }
+	visit something[page]
+
 	#visit new_user_registration_path
 	#click_link "Sign up"
 end
 
 
-When(/^I press "(.*?)"$/) do |sign_up|
-  click_link "Sign up"
+When(/^I press the "(.*?)" button$/) do |button|
+  click_link "#{button}"
 end
 
-Then (/^I am on the users_sign_up_page$/) do
+When(/I fill in the sign up form$/) do
+  sign_up_new_account(createUser.first_name, createUser.last_name)
+end
+
+Then (/^I am on the "new user" page$/) do
 	visit new_user_registration_path
 end
 # When (/^I fill in "Email" with "manisiva19@gmail.com"$/) do
