@@ -1,3 +1,10 @@
+class Num
+  attr_accessor :num
+  def initialize(num)
+    @num = rand(num).to_s
+  end
+end
+
 #class User
 #  attr_accessor :first_name, :last_name, :likes, :about_me
 

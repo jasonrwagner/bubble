@@ -34,9 +34,11 @@ group :test do
   gem 'launchy'
   gem "factory_girl_rails"
   gem 'webrat'
+  gem 'cucumber-websteps'
   gem 'cucumber-rails'
   gem 'database_cleaner'
-  gem 'selenium-webdriver'
+  gem "selenium-webdriver", "~> 2.38.0"
+  gem "watir-rails"
 end
 
 group :production do

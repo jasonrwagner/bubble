@@ -1,29 +1,33 @@
-#Feature: Sign up
-#  As an unauthorized user
-#  I want to signup with my details
-#  So that I can login
+Feature: Sign in
+  As an unauthorized user
+  I want to sign in with my details
+  So that I am loged in
 
-#Scenario: Successful Sign Up
-#  Given I am on the "home" page
-#  When I press the "Sign up" button
-#  And I am on the "users_sign_up" page
-  #And I fill in email
-  #And I fill in password
-  #And I fill in password_confirmation
-  #And I press "Sign up"
-  #Then I should see "Welcome! You have signed up successfully."
+Scenario: Successful Sign In
+Given I am on the home page
+When I click the "Sign in" link
+And I am on the user_sign_in page
+And I fill in email and password
+And I press the "Sign in" button
+Then I am signed in
 
-  
-#Scenario: Password doesn't match confirmation
-#  Given I am on the home page
-#  When I click "Sign up"
-#  When I fill in "Email" with "manisiva19@gmail.com"
-#  And I fill in "Password" with "Secret"
-#  And I fill in "Password confirmation" with "Password"
-#  And I press "Sign up"
-#  Then the Sign up form should be shown again
-#  And I should see "Password doesn't match confirmation"
-#  And I should not be registered
+Scenario:  Log out
+Given I am on the home page
+When I click the "Sign out" link
+Then I should be signed out
 
+Scenario: Successful Sign In and create a project
+Given I am on the home page
+When I click the "Sign in" link
+And I am on the user_sign_in page
+And I fill in email and password
+And I press the "Sign in" button
+Then I am signed in
+When I click the "new project" link
+Then I am on the new project page
+When I fill in the project name
+And I fill in the project description
+When I press the "Create Project" button
+Then I should see the project on the home page
 
 
