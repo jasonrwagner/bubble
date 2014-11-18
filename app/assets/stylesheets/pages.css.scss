@@ -10,7 +10,7 @@
 }
 
 #user_info  {
-	border:  solid 1px;
+	/*border:  solid 1px;*/
 	float:  right;
 	font-size:  12px;
 	display  :inline;
@@ -31,18 +31,46 @@
 
 }*/
 
+#menu_bar li {
+	list-style: none;
+	display: inline-block;
+	padding: 10px; width:80px;
+}
 
+#calendar {
+	border:  solid 1px;
+	width: 600px;
 
-#home_list  {
+}
+
+#project_list {
+	border:  solid 1px;
+	width:  900px;
+}
+
+#profile_list {
 	border:  solid 1px;
 	width:  300px;
-	
+	float:right;
+
 }
-#home_list ul {
+#project_list ul, #profile_list ul{
     list-style:  none;	
 }
+ul.list-inline {
+ padding:2-px;
+ display:inline-block;
+}
 
-	
-ul.list-inline li{ list-style-type: none; overflow: hidden; /*width:200px;*/ display:  inline;}
+ul.list-inline li { 
+
+display:  inline;}
+
 /*ul li { float:left; width: 100px; }*/
-ul li a { display: block; padding: 10px; width:80px; }
+/*ul li a { display: block; padding: 10px; width:80px; }*/
+
+#profile ul li{
+  list-style:none;
+  dispaly:inline;
+  padding:200px;
+}

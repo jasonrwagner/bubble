@@ -62,4 +62,5 @@ module Bubble
     #For devise and heroku
     config.assets.initialize_on_precompile = false
   end
+
 end

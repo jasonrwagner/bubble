@@ -8,6 +8,9 @@ gem 'sass-rails',   '~> 4.0.0'
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
+gem "fullcalendar-rails"
+gem 'momentjs-rails'
+gem 'bootstrap-datepicker-rails'
 
 
 

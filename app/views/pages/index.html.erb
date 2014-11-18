@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<h4>Home Page</h4>
-<div id="user_info">
+<div id="menu_bar">
+    <ul>
+      <select onchange="location = this.options[this.selectedIndex].value;">
+        <option>New</option>
+        <option value ="/profiles/new">Person</option>
+        <option value="/projects/new">Project</option>
+      </select>
+      <select onchange="location = this.options[this.selectedIndex].value;">
+        <option>Edit</option>
+        <option value="/profiles">Person</option>
+        <option value="/projects">Project</option>
+      </select>
+  <div id="user_info">
   <ul class="list-inline">
     <% if user_signed_in? %>
-    <li><div>Hello <%= current_user.email %> join a project?</div></li>
-    <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-    </br>
-    <li><p>Make a new project</p></li>
-    <li><%= link_to "new project", new_project_path %></li>
+      <li><div><%= current_user.email %></div></li>
+      <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
     <% else %>
-
-    <li>First Time</li>
-
-      <%= render "devise/shared/links" %>
-
-
+      <li><%=link_to "Sign In", new_user_session_path %></li>
+      <li><%=link_to "Sign Up", new_user_registration_path %></li>
+      
     <% end %>
   </ul>
+  </div>
+  </ul>
+
 </div>
-<div id="home_list">  
+<div id ="calandar"
+  <h4>Calandar</h4>
+  <div id='calendar'></div>
+</div>
+<div id="profile_list">
+  <h4>Profiles</h4>
+      <ul>
+        <% @profile.each do |profile| %>
+          <li>
+            <%= profile.first_name %>
+            <%= profile.last_name %>
+          </li>
+        <% end %>
+      </ul>
+</div>
+<div id="project_list"> 
+  <h4>Projects</h4> 
   <ul>
     <% @projects.each do |project| %>
       <li>
-        <%= project.name %>
-        <%= project.description %>
         <% if current_user && project.owner.to_i == current_user.id %>
+          <%= project.name %>
+          <%= project.description %>
           <%= link_to "edit", edit_project_path(project) %>
-        <% else %>
 
+        <% else %>
+          <%= project.name %>
+          <%= project.description %>
         <% end %>
       </li>
     <% end %>
-
   </ul>
 </div>
-
 </html>
