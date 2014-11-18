@@ -1,10 +1,10 @@
 <h1>Current Profiles List</h1>
 
-  <ul>
-    <% @users.each do |user| %>
-      <li>
-        <%= user.email %>
-      </li>
+<ul id="profile">
+    <% @profile.each do |profile| %>
+        <li data-id='<%= profile.id %>'>
+          <%= profile.first_name %>
+          <%= profile.last_name %>
+        </li>
     <% end %>
-
-  </ul>
+</ul>  

@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def index
 
   	  @projects = Project.all
-
+      @profile = Profile.all
 
   end
   

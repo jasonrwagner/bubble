@@ -1,32 +1,33 @@
 class ProfilesController < ApplicationController
 
   def index
-  	@users = User.all
+    @profile = Profile.all
+  	#@users = User.all
   end
 
   
 
   def show
-  	@profile = User.find(params[:id])
+  	@profile = Profile.find(params[:id])
   end
 
   def edit
-  	@profile = User.find(params[:id])
+  	@profile = Profile.find(params[:id])
   end
 
-#  def new
-#  	@profile = Profile.new
-#  end
+  def new
+  	@profile = Profile.new
+  end
 
-#  def create
-#    @profile = Profile.new(profile_params)
-#      if @profile.save
-#        flash[:success] = "New Profile"
-#        redirect_to "show"
-#      else
-#        render :new
-#      end
-#  end
+def create
+    @profile = Profile.new(profile_params)
+      if @profile.save
+        flash[:success] = "New Profile"
+        redirect_to pages_path
+      else
+        render :new
+      end
+end
 
 
 

@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   def index
     @projects = Project.all
+    @users = User.all
     #@project.owner = Project.find(params[:owner])
   end
 
@@ -44,6 +45,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :owner, :user_email, :description)
+    params.require(:project).permit(:name, :owner, :user_email, :description, :start_date, :end_date)
   end
 end

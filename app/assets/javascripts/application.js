@@ -12,5 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+
 //= require twitter/bootstrap
+//= require fullcalendar
+//= require moment
+//= require bootstrap-datepicker
 //= require_tree .
+
+$(function() {
+	$("#start_date").datepicker();
+});
+
+$(document).on("page:load ready"), function(){
+	$("input.datepicker").datepicker();
+});
