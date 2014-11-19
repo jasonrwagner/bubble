@@ -1,36 +1,55 @@
-<h2>Sign up</h2>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-4 col-md-offset-4'>
+      <br><br>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2>Sign Up</h2>
+        </div>
+        <div class="panel-body">
+          <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
 
+            <div class='form-group'>
+              <%= f.label :email %>
+              <%= f.email_field :email, :autofocus => true, :class => "form-control" %>
+            </div>
 
+            <div class='form-group'>
+            <%= f.label :password %>
+            <%= f.password_field :password, :class => "form-control" %>
+            </div>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+            <div class='form-group'>
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, :class => "form-control" %>
+            </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+              <%= f.fields_for :profile do |profile_form| %>
+                <div class='form-group'>
+                  <%= profile_form.label :first_name %>
+                  <%= profile_form.text_field :first_name, :class => "form-control" %>
+                </div>
+                <div class='form-group'>
+                  <%= profile_form.label :last_name %>
+                  <%= profile_form.text_field :last_name, :class => "form-control" %>
+                </div>
+                <div class='form-group'>
+                  <%= profile_form.label :likes %>
+                  <%= profile_form.text_field :likes, :class => "form-control" %>
+                </div>
+                <div class='form-group'>
+                  <%= profile_form.label :about_me %>
+                  <%= profile_form.text_field :about_me, :class => "form-control" %>
+                </div>
+              <% end %>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-    <%= f.fields_for :profile do |profile_form| %>
-      <h2><%= profile_form.label :first_name %></h2>
-      <p><%= profile_form.text_field :first_name %></p>
-
-      <h2><%= profile_form.label :last_name %></h2>
-      <p><%= profile_form.text_field :last_name %></p>
-
-      <h2><%= profile_form.label :likes %></h2>
-      <p><%= profile_form.text_field :likes %></p>
-
-      <h2><%= profile_form.label :about_me %></h2>
-      <p><%= profile_form.text_field :about_me %></p>
-
-
-    <% end %>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+            <div><%= f.submit "Sign Up", :class => "btn btn-primary btn-block" %></div>
+          <% end %>
+          <br>
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

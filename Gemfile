@@ -25,7 +25,6 @@ gem 'heroku'
 gem 'thin'
 gem 'taps'
 gem 'minitest'
-gem 'rb-inotify'
 
 group :test do
 
