@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+header{
+	height:80px;
+	margin-bottom:20px;
+	background-color:rgba(0,0,0,0.05);
+}
+
+
 #sign_in{
 	
 	border: solid 1px;
@@ -15,8 +22,6 @@
 	font-size:  12px;
 	display  :inline;
 }
-
-
 
 
 /*#user_info ul li { float:left; width: 100px; }*/
@@ -34,31 +39,26 @@
 #menu_bar li {
 	list-style: none;
 	display: inline-block;
-	padding: 10px; width:80px;
+	padding: 10px;
+	width:80px;
 }
 
 #calendar {
-	border:  solid 1px;
-	width: 600px;
-
 }
 
 #project_list {
-	border:  solid 1px;
 	width:  900px;
+	background-color:rgba(0,0,0,0.05);
 }
 
 #profile_list {
-	border:  solid 1px;
-	width:  300px;
-	float:right;
-
+	background-color:rgba(0,0,0,0.05);
 }
 #project_list ul, #profile_list ul{
     list-style:  none;	
 }
 ul.list-inline {
- padding:2-px;
+ padding:2px;
  display:inline-block;
 }
 
@@ -70,7 +70,17 @@ display:  inline;}
 /*ul li a { display: block; padding: 10px; width:80px; }*/
 
 #profile ul li{
+	background-color:rgba(0,0,0,0.05);
   list-style:none;
-  dispaly:inline;
+  display:inline;
   padding:200px;
+}
+
+footer {
+	margin-top:20px;
+	padding:20px;
+	background-color:rgba(0,0,0,0.05);
+}
+footer p {
+	text-align: center;
 }

@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-
-//= require twitter/bootstrap
+//= require bootstrap.min
 //= require fullcalendar
 //= require moment
 //= require bootstrap-datepicker
