@@ -19,13 +19,14 @@
 
   <div class="field">
   	<%= f.label :end_date %><br />
-  	
-  	<input type="text" class='datepicker' >
+  	<%= f.text_field :end_date, 'data-behaviour' => 'datepicker', 'class'=>'datepicker' %>
+
   	<script type="text/javascript">
       $(document).ready(function (){
-        $('.datepicker').datepicker();
+        $('.datepicker').datepicker({dateFormat: 'yy-mm-dd'});
       });
   	</script>
+
 
   </div>
 

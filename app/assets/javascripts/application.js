@@ -18,10 +18,3 @@
 //= require bootstrap-datepicker
 //= require_tree .
 
-$(function() {
-	$("#start_date").datepicker();
-});
-
-$(document).on("page:load ready"), function(){
-	$("input.datepicker").datepicker();
-});
