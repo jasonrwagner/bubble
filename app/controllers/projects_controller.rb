@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(project_params)
+    @project = Project.create(project_params)
     @project.owner = current_user.id
     @project.user_email = User.find(current_user.id).email
       if @project.save
@@ -46,5 +46,6 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:name, :owner, :user_email, :description, :start_date, :end_date)
+
   end
 end
