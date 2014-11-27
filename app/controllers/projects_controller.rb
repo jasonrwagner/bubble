@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+
+  
   def index
     @projects = Project.all
     @users = User.all
@@ -27,6 +29,7 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    @project_start_date = @project.start_date.to_s
   end
 
   def update
