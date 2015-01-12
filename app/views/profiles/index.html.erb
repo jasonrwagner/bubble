@@ -1,10 +1,14 @@
-<h1>Current Profiles List</h1>
-
-<ul id="profile">
-    <% @profile.each do |profile| %>
-        <li data-id='<%= profile.id %>'>
-          <%= profile.first_name %>
-          <%= profile.last_name %>
-        </li>
-    <% end %>
-</ul>  
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-4 col-md-offset-4'>
+      <h2>Profiles</h2>
+      <ul class="list-group">
+        <% @profile.each do |profile| %>
+          <li data-id='<%= profile.id %>' class="list-group-item">
+            <%= profile.last_name %>, <%= profile.first_name %> <a href='/profiles/<%= profile.id %>/edit' class="badge">edit</a>
+          </li>
+        <% end %>
+      </ul>  
+    </div>
+  </div>
+</div>
