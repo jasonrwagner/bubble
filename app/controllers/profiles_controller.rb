@@ -5,8 +5,6 @@ class ProfilesController < ApplicationController
   	#@users = User.all
   end
 
-  
-
   def show
   	@profile = Profile.find(params[:id])
   end
@@ -19,7 +17,7 @@ class ProfilesController < ApplicationController
   	@profile = Profile.new
   end
 
-def create
+  def create
     @profile = Profile.new(profile_params)
       if @profile.save
         flash[:success] = "New Profile"
@@ -27,9 +25,8 @@ def create
       else
         render :new
       end
-end
-
-
+    end
+  end
 
   private
 

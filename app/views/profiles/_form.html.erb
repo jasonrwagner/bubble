@@ -1,17 +1,21 @@
 <%= form_for (@profile) do |f| %>
+  <div class="field form-group">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, :class => "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :last_name %>
+    <%= f.text_field  :last_name, :class => "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :likes %>
+    <%= f.text_field  :likes, :class => "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :about_me %>
+    <%= f.text_field  :about_me, :class => "form-control" %> 
+  </div>
+  
+  <%= f.submit "Create Profile", :class => "btn btn-block btn-primary"%>
 
-  <div class="field"><%= f.label :first_name %><br />
-  <%= f.text_field :first_name %></div>
-
-  <div class="field"><%= f.label :last_name %><br />
-  <%= f.text_field  :last_name %></div>
-
-  <div class="field"><%= f.label :likes %><br />
-  <%= f.text_field  :likes %></div>
-
-  <div class="field"><%= f.label :about_me %><br />
-  <%= f.text_field  :about_me %></div>
-
-
-  <%= f.submit %>
 <% end %>

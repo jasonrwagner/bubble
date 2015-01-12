@@ -1,6 +1,5 @@
 class ProjectsController < ApplicationController
 
-  
   def index
     @projects = Project.all
     @users = User.all
@@ -8,7 +7,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-  	@project = Project.find(params[:id])
+  	@project = Project.find(params[:name])
   end
 
   def new
@@ -17,14 +16,14 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.create(project_params)
-    @project.owner = current_user.id
-    @project.user_email = User.find(current_user.id).email
-      if @project.save
-        flash[:success] = "Made a new tournament"
-        redirect_to pages_path
-      else
-        render :new
-      end
+    # @project.owner = current_user.id
+    # @project.user_email = User.find(current_user.id).email
+    if @project.save
+      flash[:success] = "Made a new tournament"
+      redirect_to pages_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -41,14 +40,9 @@ class ProjectsController < ApplicationController
     end
   end
 
-
-
-
-
   private
 
   def project_params
     params.require(:project).permit(:name, :owner, :user_email, :description, :start_date, :end_date)
-
   end
 end
