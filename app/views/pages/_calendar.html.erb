@@ -1,0 +1,38 @@
+<div id ="calendar"></div>
+<script>
+  var updateEvent;
+  $(document).ready(function(){
+    var date = new Date();
+    var d = date.getDate();
+    var m = date.getMonth();
+    var y = date.getFullYear();
+    var calendar = $('#calendar').fullCalendar(
+    {
+      header: { left: 'title', right: 'prev,today,next' },
+      defaultView: 'month',
+      // selectable: true,
+      // selectHelper: true,
+      select: function(start, end, allDay)
+      {
+        var title = prompt('Event Title:');
+        if (title) { 
+          calendar.fullCalendar('renderEvent', { title: title, start: start, end: end, allDay: allDay }, true ); 
+          calendar.fullCalendar('unselect');
+        }
+      },
+      // editable: true,
+      events: [
+        <% @projects.each do |project| %>
+        {
+          id: <%= project.id %>,
+          title: '<%= project.name %>',
+          start: new Date(<%= project.start_date.year %>, <%= project.start_date.mon - 1 %>, <%= project.start_date.day %>),
+          end: new Date(<%= project.end_date.year %>, <%= project.end_date.mon - 1 %>, <%= project.end_date.day %>),
+          allDay: true,
+          color: "#23527c"
+        },
+        <% end %>
+      ]
+    });
+  });
+</script>

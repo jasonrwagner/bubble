@@ -1,8 +1,14 @@
 <%= flash[:notice] %>
 
-<p>Current Project</p>
-<%= @project.name %>
-  
-
-
-<%= link_to "edit", edit_project_path(@project) %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2><%= @project.name %></h2>
+      <p><%= link_to "edit project", edit_project_path(@project) %></p>
+      <h4>Dates</h4>
+      <p><%= @project.start_date %> - <%= @project.end_date %></p>
+      <h4>Description</h4>
+      <p><%= @project.description %></p>
+    </div>
+  </div>
+</div>
