@@ -5,12 +5,11 @@ Bubble::Application.routes.draw do
     resources :profiles
   end
 
-
   resources :pages
   resources :projects
   resources :profiles
-  
 
+  get '/jira-exporter' => 'pages#jira-exporter'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

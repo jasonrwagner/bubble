@@ -1,0 +1,67 @@
+<header>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">SpinDance PM Tool</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+         		Actions <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <li role="presentation" class="dropdown-header">NEW</li>
+            <li><a href='/profiles/new'>Profile</a></li>
+            <li><a href='/projects/new'>Project</a></li>
+            <li class="divider"></li>
+            <li role="presentation" class="dropdown-header">EDIT</li>
+            <li><a href='/profiles/edit'>Profile</a></li>
+            <li><a href='/projects/edit'>Project</a></li>
+            <li class="divider"></li>
+            <li role="presentation" class="dropdown-header">TOOLS</li>
+            <li><a href="/jira-exporter/">JIRA Exporter</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+          <% if user_signed_in? %>
+          	<%= current_user.email %>
+          <% else %>
+          	Not signed in
+          <% end %>
+          <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" role="menu">
+            <% if user_signed_in? %>
+            	<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+            	<li><%=link_to "Sign up", new_user_registration_path %></li>
+              <li><%=link_to "Sign in", new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </nav>
+  <div class='container'>
+    <!-- The following will be used  -->
+    <!--
+    <div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <b>Alert Heading</b> Alert body text.
+    </div>
+    -->
+    <p class="notice alert alert-info"><!-- <b>Sample Notice</b> This is sample notice text --><%= notice %></p>
+    <p class="alert alert-warning"><!-- <b>Sample Alert</b> This is sample alert text --><%= alert %></p>
+  </div>
+</header>
