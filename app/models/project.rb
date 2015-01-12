@@ -4,5 +4,4 @@ class Project < ActiveRecord::Base
 	def my_date=(val)
 		val = Date.strptime(val, "%m%d%Y") if val.prestent?
 	end
-
 end
